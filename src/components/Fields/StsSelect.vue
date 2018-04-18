@@ -13,11 +13,9 @@
                     <option disabled value="" v-else label="Select an Option">
                         Select an Option
                     </option>
-                    <span v-for="(option, index) in field.options" :key="index">
-                        <option v-if="!option.renderCondition || option.renderCondition && evalCondition(option.conditionalModel, option.renderCondition)" :value="option.value" :label="option.label">
-                            {{ option.label }}
-                        </option>
-                    </span>
+                    <option v-if="!option.renderCondition || option.renderCondition && evalCondition(option.conditionalModel, option.renderCondition)" v-for="(option, index) in field.options" :key="index" :value="option.value" :label="option.label">
+                        {{ option.label }}
+                    </option>
                 </select>
             </div>
         </div>
