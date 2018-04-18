@@ -394,7 +394,7 @@
                 // Turn dataReset on
                 this.dataReset = true;
                 // Clear validator errors
-                this.$validator.clean();
+                this.$validator.reset();
                 // Scroll to top of app
                 if (this.scrollToTop) {
                     this.scrollUp();
