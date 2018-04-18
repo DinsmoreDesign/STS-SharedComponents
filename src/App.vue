@@ -68,6 +68,7 @@
           :formFields="formData.formFields"
           :formModels="formData.fieldModels"
           postUrl="/"
+          :scrollToTop="false"
         ></StsForm>
       </div>
 

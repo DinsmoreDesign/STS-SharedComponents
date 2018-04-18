@@ -163,8 +163,12 @@
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
     @import '/node_modules/flatpickr/dist/flatpickr.css';
+
+    .flatpickr-calendar {
+        max-width: 308px;
+    }
 
 </style>
