@@ -1,0 +1,325 @@
+@charset "utf-8";
+
+/* SASS Variables
+----------------------------------------------------------*/
+
+	$vue-green: rgb(77, 186, 135);
+	$vue-blue: rgb(67, 84, 102);
+
+/* IMPORT VENDOR STYLING
+----------------------------------------------------------*/
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+	@import "node_modules/bulma/bulma";
+
+/* HTML ELEMENT STYLING   
+----------------------------------------------------------*/
+
+	[v-cloak] {
+		display: none;
+	}
+	
+	html {
+		overflow: auto;
+	}
+
+	strong,
+	.title strong,
+	.subtitle strong {
+		color: inherit;
+		font-weight: 700;
+	}
+
+    :focus {
+        outline: -webkit-focus-ring-color auto 5px;
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+        outline-width: 5px;
+    }
+
+	footer.footer {
+		padding: 1.5rem;
+	}
+
+	img {
+
+		&.is-outlined {
+			border: 5px solid $text;
+
+			&.is-info {
+				border-color: $info;
+			}
+
+			&.is-primary {
+				border-color: $primary;
+			}
+
+			&.is-warning {
+				border-color: $warning;
+			}
+
+			&.is-danger {
+				border-color: $danger;
+			}
+
+			&.is-light {
+				border-color: $light;
+			}
+
+			&.is-dark {
+				border-color: $dark;
+			}
+
+			&.is-success {
+				border-color: $success;
+			}
+
+		}
+
+	}
+
+/* UTILITY STYLES
+----------------------------------------------------------*/
+
+	.italics {
+		font-style: italic;
+	}
+
+	.pad-section {
+        padding: 1.5rem;
+    }
+
+    .pad-top {
+        padding-top: 1.5rem;
+    }
+
+	.pad-bottom {
+		padding-bottom: 1.5rem;
+	}
+
+	.is-rounded {
+		border-radius: 100%;
+	}
+
+/* CONTENT BLOCK STYLING
+----------------------------------------------------------*/
+	
+	.app-frame {
+		padding-top: 52px;
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+
+	.content-wrapper {
+		flex: 1 0 0 ;
+	}
+
+	.notification {
+		padding: 1.25rem 1.5rem;
+	}
+
+	.tile .is-pulled-right {
+		margin-left: auto;
+	}
+
+	.cmn-wrapper {
+		border: 3px solid $light;
+
+		&:not(:last-child),
+		&:not(:last-child) {
+			margin-bottom: 1.5rem;
+		}
+	}
+	.cmn-box {
+		background: $light;
+		border-radius: 3px;
+		padding: 1rem;
+	}
+
+		.cmn-wrapper.is-danger,
+		.cmn-box.is-danger,
+		.validator-box.is-danger {
+			outline: 1px solid $danger;
+		}
+
+	.table-container {
+		overflow: auto;
+	}
+
+		.table thead {
+			td, th {
+				color: $dark;
+			}
+		}
+
+	.button.is-expanded {
+		width: 100%;
+	}
+
+	.center-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.refresh {
+		position: absolute;
+		font-size: 3.5rem;
+		line-height: 3.5rem;
+		color: #FFF;
+		opacity: 0.8;
+
+		&:hover {
+			opacity: 1;
+			color: #FFF;
+		}
+
+		.fa {
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+	}
+
+	code {
+		background-color: $vue-green;
+		color: $white;
+		white-space: pre-wrap;
+
+		&[language]::before {
+			font-size: 1rem;
+			content: "Language: " attr(language);
+			color: $vue-blue;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background: lighten($vue-green, 35%);
+			padding: 0 0.5rem;
+		}
+
+	}
+
+	pre {
+		position: relative;
+
+		code {
+			background-color: transparent;
+			overflow: auto;
+		}
+
+		&[class*="language-"] {
+			padding: 0;
+		}
+
+	}
+
+/* COMPONENT COLORING
+----------------------------------------------------------*/
+
+	/***** STS_ARTICLE *****/
+	.article {
+
+		.article-left {
+
+			.article-icon {
+				background-color: $link;
+			}
+
+		}
+
+		.article-links {
+
+			.links-title {
+				border-bottom: 1px solid $text;
+			}
+
+		}
+
+	}
+
+	/***** STS_CARD *****/
+	.horiz-card {
+		box-shadow: $card-shadow;
+
+		&> .column.is-narrow {
+			background: $link;
+		}
+
+	}
+
+	/***** STS_FORM *****/
+	form span.required {
+        margin: 0 0.25rem;
+		text-transform: uppercase;
+		font-size: 70%;
+		color: $danger;
+    }
+
+	/***** STS_HEADER *****/
+	.hero {
+
+		.primary-overlay {
+			background-color: rgba($primary, 0.7);
+		}
+
+		.info-overlay {
+			background-color: rgba($info, 0.7);
+		}
+
+		.warning-overlay {
+			background-color: rgba($warning, 0.7);
+		}
+
+		.danger-overlay {
+			background-color: rgba($danger, 0.7);
+		}
+
+		.light-overlay {
+			background-color: rgba($light, 0.7);
+
+			h1, h2, h3,
+			h4, h5, p {
+				color: invert($light);
+			}
+
+		}
+
+		.dark-overlay {
+			background-color: rgba($dark, 0.7);
+		}
+
+		.success-overlay {
+			background-color: rgba($success, 0.7);
+		}
+
+	}
+
+	/***** STS_LOADER *****/
+	.loader-overlay {
+
+		.loader {
+			border: 2px solid $info;
+		}
+
+	}
+
+	/***** STS_MODAL *****/
+	.modal {
+
+		.modal-content {
+
+			 .section {
+				background: $white;
+			}
+
+		}
+
+	}
+
+	/***** STS_TABLE *****/
+	thead,
+	tfoot {
+		background-color: $light;
+	}
